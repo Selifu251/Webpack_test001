@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: 'index.js',
@@ -16,7 +15,23 @@ module.exports = {
         rules: [
             {
                 test: /\.(scss|sass)$/,
-                use: ['style-loader','css-loader','sass-loader']
+                use:[{
+                    loader: 'style-loader'
+                },{
+                    loader: 'css-loader'
+                },{
+                    loader: 'postcss-loader',
+                    options: {
+                        plugin: function(){
+                            return [
+                                require('precss'),
+                                require('autoprefixer')
+                            ];
+                        }
+                    }
+                },{
+                    loader: 'sass-loader'
+                }]
             }
         ]
     }

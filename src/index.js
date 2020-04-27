@@ -1,7 +1,7 @@
-import './vueAll.js';
 import './scss/index.scss';
-import './box'
+import 'bootstrap';
 
-console.log("Test Webpack 001");
-console.log("Test Webpack 002");
-console.log("Test 003")
+import './box';
+import './vueAll';
+
+console.log("Test 000");
