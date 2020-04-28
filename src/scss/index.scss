@@ -11,6 +11,13 @@ body {
         }
     }
 
+    #game_div {
+        text-align: center;
+        #test_canvas {
+            background-color: white;
+        }
+    }
+
     #main {
         background-color: white;
        .box {
